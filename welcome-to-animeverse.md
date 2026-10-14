@@ -13,7 +13,6 @@ author: "ANIMEVERSE Editorial"
 read_time: "3 min read"
 external_url: ""
 seo_layout: "article.njk"
-title: "Welcome to ANIMEVERSE"
 seo_description: "Explore anime news, seasonal guides, manga updates, and reviews on ANIMEVERSE."
 social_image: ""
 draft: false
