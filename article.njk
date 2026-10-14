@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="{{ seo_description or description or site.description }}">
+  <meta property="og:title" content="{{ seo_title or title }}">
+  <meta property="og:description" content="{{ seo_description or description or site.description }}">
+  <meta property="og:type" content="article">
+  {% if social_image or featured_image %}<meta property="og:image" content="{{ social_image or featured_image }}">{% endif %}
+  <title>{{ seo_title or title }} | {{ site.title }}</title>
+  <style>
+    :root{color-scheme:dark;--bg:#090a0f;--surface:#11131c;--border:#292d3c;--violet:{{ site.accent_color or '#9b72ff' }};--blue:{{ site.secondary_color or '#55a7ff' }};--text:#f7f7fb;--muted:#a4a8b8}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:17px/1.8 Inter,system-ui,sans-serif}a{color:#c6b3ff}header,main,footer{width:min(850px,calc(100% - 36px));margin:auto}header{padding:24px 0;border-bottom:1px solid var(--border)}.brand{font-size:1.25rem;font-weight:900;text-decoration:none;background:linear-gradient(100deg,var(--violet),var(--blue));color:transparent;background-clip:text}main{padding:40px 0 80px}h1{font-size:clamp(2rem,5vw,3.5rem);line-height:1.1;letter-spacing:-.04em}img{max-width:100%;height:auto;border-radius:18px}.meta{color:var(--muted);font-size:.9rem}.body{margin-top:32px}.body h2,.body h3{line-height:1.25;margin-top:1.8em}.body a{word-break:break-word}footer{padding:22px 0;border-top:1px solid var(--border);color:var(--muted);font-size:.9rem}
+  </style>
+</head>
+<body>
+  <header><a class="brand" href="/">{{ site.title }}</a></header>
+  <main>
+    <p class="meta"><a href="/">Home</a> / {{ category or 'Anime News' }} · {{ date if date else '' }} · {{ read_time or '5 min read' }}</p>
+    <h1>{{ title }}</h1>
+    {% if description %}<p class="meta">{{ description }}</p>{% endif %}
+    {% if featured_image %}<img src="{{ featured_image }}" alt="{{ title }}">{% endif %}
+    <div class="body">{{ content | safe }}</div>
+    {% if tags %}<p class="meta">Tags: {% for tag in tags %}<span>#{{ tag }} </span>{% endfor %}</p>{% endif %}
+    {% if external_url %}<p><a href="{{ external_url }}" target="_blank" rel="noopener noreferrer">Read original source ↗</a></p>{% endif %}
+  </main>
+  <footer>© {{ site.title }} · <a href="/">Back to home</a></footer>
+</body>
+</html>
