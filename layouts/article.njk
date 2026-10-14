@@ -1,0 +1,43 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title }} | ANIMEVERSE</title>
+  <meta name="description" content="{{ seo_description or description or title }}">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <a href="/">ANIMEVERSE</a>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/category/anime-news/">Anime News</a>
+    </nav>
+  </header>
+
+  <main>
+    <article>
+      <h1>{{ title }}</h1>
+
+      {% if social_image %}
+      <img src="{{ social_image }}" alt="{{ title }}" style="max-width:100%;height:auto">
+      {% endif %}
+
+      {% if description %}
+      <p>{{ description }}</p>
+      {% endif %}
+
+      <div>
+        {{ content | safe }}
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <p>© ANIMEVERSE</p>
+  </footer>
+</body>
+</html>
+```
