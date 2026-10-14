@@ -1,0 +1,50 @@
+media:
+  input: images
+  output: /images
+content:
+  - name: articles
+    label: Anime Articles
+    type: file
+    path: data/articles.json
+    format: json
+    list: true
+    fields:
+      - name: id
+        label: URL ID (slug)
+        type: string
+        required: true
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: category
+        label: Category code (news, manga, reviews)
+        type: string
+        required: true
+      - name: categoryName
+        label: Category label
+        type: string
+        required: true
+      - name: author
+        label: Author
+        type: string
+        required: true
+      - name: date
+        label: Display date (e.g. Oct 14, 2026)
+        type: string
+        required: true
+      - name: readTime
+        label: Reading time (e.g. 5 min read)
+        type: string
+      - name: image
+        label: Thumbnail image URL or path
+        type: image
+        required: true
+      - name: summary
+        label: Short summary
+        type: text
+        required: true
+      - name: content
+        label: Article body
+        type: rich-text
+        required: true
