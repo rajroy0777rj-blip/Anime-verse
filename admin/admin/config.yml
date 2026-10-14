@@ -1,0 +1,7 @@
+backend:
+  name: github
+  repo: rajroy0777rj-blip/Anime-verse
+  branch: main
+
+site_url: https://animeversewrold.netlify.app
+display_url: https://animeversewrold.netlify.app
